@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+  <title> CH 1-1 </title>
+  <meta charset="utf-8">
+</head>
+
+<style>
+  body{
+      background-color: black;
+      margin : 0;
+      -ms-user-select: none;
+      -moz-user-select:
+      -moz-none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      user-select:none;
+  }
+  #wrap{
+    text-align: center;
+  }
+  #header{
+    display: block;
+    background-color: black;
+    color: red;
+    font-size: 35px;
+    line-height: 10vh;
+    font-family: Georgia;
+  }
+  #middle{
+    background-color: black;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  #footer{
+    font-size: 13px;
+    display: block;
+    background-color: black;
+    line-height: 6vh;
+    color:white;
+    font-family: Georgia, 궁서;
+  }
+  #section{
+      height: 75vh;
+      width: 80vw;
+      background-color: black;
+      border-top: 4vh solid;
+      border-bottom: 4vh solid;
+      border-left: 4vh solid;
+      border-right: 4vh solid;
+      margin-left: -4vh;
+      margin-right: -4vh;
+      border-color: rgb(32, 32, 32);
+      text-align: center;
+      font-family: Georgia;
+      background-size: cover;
+  }
+  #back{
+    position : absolute;
+    width: 51px;
+    height: 51px;
+    left: 10vw;
+    top: 18vh;
+    margin-left: 4vh;
+  }
+  #narration{
+    display: none;
+    width: 40vw;
+    min-height: 16vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -20vw;
+    margin-top: -8vh;
+    text-align: center;
+    background: radial-gradient(#111111, black) fixed;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 10px black;
+  }
+  #ntext {
+    font-size: 18px;
+    padding: 2rem 2rem 2rem 2rem;
+    line-height: 1.8;
+  }
+  #dialogue{
+    display: none;
+    position: absolute;
+    top: 79vh;
+    width: 80vw;
+    height: 11vh;
+    color: white;
+    display: none;
+    background: radial-gradient(#111111, black) fixed;
+    box-shadow: 0 0 15px 10px black;
+    text-align: start;
+  }
+  #dtext{
+    font-size: 18px;
+    padding: 1rem 2rem 2rem 2rem;
+    line-height: 1.8;
+  }
+  #transition{
+    display: none;
+  }
+  #trButton{
+    font-size: 30px;
+    width: 16rem;
+    height: 4rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -8rem;
+    margin-top: -2rem;
+  }
+</style>
+
+<script>
+  // implemnet from here
+  var sceneNumber = 15;
+  var text = ['???: ...여긴 어디지..?',
+              '내 이름은 김철수, 정신을 잃고 눈을 떠보니 감옥에 갇혀있었다. 이곳에서 지내면서 몇 가지 깨달은 것들이 있다. ',
+              "1. 이곳의 교도관들은 북한사람이고, '정원준'이라는 교도관은 간혹 남한말도 사용한다. (항상 지참하는 노트북으로 남한의 문화를 접하는 것 같다.)",
+              "2. 내 오른쪽 팔에는 뜻을 모를 단어가 하나 적혀있다. '아이즈원'...? 인터넷을 쓸 수 있다면 뭔가 알아낼지도 모르겠다.",
+              "3. 침대 밑에는 '해킹 초보부터 고수까지'라는 책 한 권이 꽁꽁 숨겨져 있다. 어디에 쓰는 물건일까?",
+              '마침 정원준 교도관이 노트북으로 무언가 채팅을 치는 것 같다. 무언가 정보를 얻을지도 모른다',
+              '[단체톡] 정원준: 내 생일 언젠지 맞추면 아이즈원 한정판 앨범 줄게.',
+              '[단체톡] 오승준: 나 몇월인지는 알고 있어.',
+              '[단체톡] 김기명: 나는 몇일인지 알고 있어.',
+              '[단체톡] 정원준: 그래? 그럼 10개 중 하난데 한번 맞춰보던지 ㅋㅋ 5/15, 5/16, 5/19, 6/17, 6/18, 7/14, 7/16, 8/14, 8/15, 8/17 중 하나야',
+              '[단체톡] 오승준: 흠... 언젠지 모르겠는데, 기명이도 모르겠다는 건 알겠다ㅋㅋ',
+              '[단체톡] 김기명: 아 나도 몰랐는데, 너 말 듣고 이제 알았다.',
+              '[단체톡] 오승준: 어? 나도 그럼 이제 알았어.',
+              '[단체톡] 정원준: 아 협동하는 건 반칙이지 ㅡㅡ 나 술병나서 화장실 좀 갓다올게',
+              '....정원준이 자리를 비웠다. 노트북으로 뭔가 알아낼 수 있을지도 몰라'];
+  var isNarration = [false, true, true, true, true, true, false, false, false, false, false, false, false, false, true];
+  var backgroundColor = ['red', 'orange', 'yellow', 'green', 'blue', 'darkblue', 'purple'];
+  var textColor = ['gray','gray','gray','gray','gray','gray','gray', 'gray','gray','gray','gray','gray','gray', 'gray','gray'];
+  var files = ["",
+                "images/1.jpg",
+                "images/1.jpg",
+                "images/1.jpg",
+                "images/1.jpg",
+                "images/1.jpg",
+                "images/2.jpg",
+                "images/2.jpg",
+                "images/2.jpg",
+                "images/2.jpg",
+                "images/2.jpg",
+                "images/2.jpg",
+                "images/2.jpg",
+                "images/2.jpg",
+                "images/3.jpg"];
+  // to her to change the story
+
+  var imgs = new Array();
+  for(var i=0; i<files.length; i++) {
+  imgs[i] = new Image();
+  imgs[i].src = files[i];
+  }
+  var i = 0;
+  var delay = 100;
+  var typeIdx;
+  var tyInt;
+  var isprev = false;
+
+  function print(isNar){
+    clearInterval(tyInt);
+    var typingBool = false;
+    typingIdx=0;
+    typingTxt = text[i];
+    typingTxt=typingTxt.split("");
+    if(typingBool==false){
+       typingBool=true;
+       if(isNar)  ntext.textContent = '';
+       else dtext.textContent = '';
+       tyInt = setInterval(typing,delay);
+     }
+     function typing(){
+       if(typingIdx<typingTxt.length){
+         if(isNar)  ntext.textContent += typingTxt[typingIdx];
+         else dtext.textContent += typingTxt[typingIdx];
+         typingIdx++;
+       } else{
+         clearInterval(tyInt);
+       }
+     }
+  }
+
+  function prevscene(){
+    isprev = true;
+    if(typingIdx >= typingTxt.length){
+      if(i<2) i = 0;
+      else i = i - 2;
+      setTimeout(nextscene(), 1000);
+    }else{
+      if(i<3) i = 0;
+      else i = i - 3;
+      setTimeout(nextscene(), 1000);
+    }
+    isprev = false;
+    event.stopPropagation();
+  }
+
+  function nextscene(){
+    var ntext = document.querySelector("#ntext");
+    var dtext = document.querySelector("#dtext");
+    var nar = document.querySelector("#narration");
+    var dial = document.querySelector("#dialogue");
+    var sec = document.querySelector("#section");
+    var trans = document.querySelector('#transition');
+    //Last page
+    if(!isprev && i && typingIdx<typingTxt.length && i<= sceneNumber){
+      clearInterval(tyInt);
+      typingIdx = typingTxt.length;
+      if(isNarration[i-1])  ntext.textContent = text[i-1];
+      else dtext.textContent = text[i-1];
+      typingIdx = typingTxt.length;
+    }else if (i >= sceneNumber) {
+      dial.style.display = 'none';
+      nar.style.display = 'none';
+      sec.style.backgroundImage = 'none';
+      trans.style.display = 'block';
+    }else{
+      if(isNarration[i]){
+        nar.style.display = 'block';
+        print(true);
+        // ntext.textContent = text[i];
+        nar.style.color = textColor[i];
+        dial.style.display = 'none';
+        trans.style.display = 'none';
+      }else{
+        dial.style.display = 'block';
+        print(false);
+        // dtext.textContent = text[i];
+        dial.style.color = textColor[i];
+        nar.style.display = 'none';
+        trans.style.display = 'none';
+      }
+      sec.style.backgroundImage = 'url(\'' + imgs[i].src + '\'';
+      i++;
+    }
+  }
+
+
+</script>
+
+<body>
+  <div id="wrap">
+        <div id="header">Chapter 1</div>
+        <div id="middle">
+
+            <div id="section" onmousedown = "nextscene()">
+              <img id = "back" src="images/back button.png" onclick = "prevscene()" width = "10%" height = "10%"> </img>
+              <div id = "narration">
+                <div id = "ntext">
+                </div>
+              </div>
+
+              <div id = "dialogue">
+                <div id = "dtext">
+                </div>
+              </div>
+
+              <div id = 'transition'>
+                <button id = 'trButton'type="button" onclick="location.href='https://cksdml1014.github.io/web1/%EB%B0%A9%ED%83%88%EC%B6%9C/chapter1-2-1.html' ">
+                  다음으로 이동
+                </button>
+              </div>
+
+          </div>
+
+        </div>
+        <div id="footer">Produced by 김기범, 박하늘, 송찬의, 정우석</div>
+      </div>
+
+
+</body>

@@ -1,0 +1,96 @@
+body{
+    background-color: black;
+    margin : 0;
+    -ms-user-select: none;
+    -moz-user-select:
+    -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select:none;
+}
+#wrap{
+  text-align: center;
+}
+#header{
+  display: block;
+  background-color: black;
+  color: red;
+  font-size: 35px;
+  line-height: 10vh;
+  font-family: Georgia;
+}
+#middle{
+  background-color: black;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+#footer{
+  font-size: 13px;
+  display: block;
+  background-color: black;
+  line-height: 6vh;
+  color:white;
+  font-family: Georgia, 궁서;
+}
+#section{
+    height: 75vh;
+    width: 80vw;
+    background-color: rgb(9,17,26);
+    border-top: 4vh solid;
+    border-bottom: 4vh solid;
+    border-left: 4vh solid;
+    border-right: 4vh solid;
+    margin-left: -4vh;
+    margin-right: -4vh;
+    border-color: rgb(32, 32, 32);
+    text-align: center;
+    font-family: Georgia;
+    background-size: cover;
+}
+#guide{
+  font-size: 20px;
+  line-height: 15vh;
+  color: white;
+  font-weight: bold;
+}
+#solve{
+
+}
+#trButton{
+    font-size: 30px;
+    width: 16rem;
+    height: 4rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -8rem;
+    margin-top: -2rem;
+  }
+#pause{
+
+}
+.title{
+  font-size: 30px;
+  line-height: 12vh;
+  color: white;
+  font-weight: bold;
+}
+.keyword{
+  color: #FFFF00;
+  display: inline;
+}
+h4{
+  font-size: 20px;
+  color: white;
+}
+td{
+    width: 50px;
+    height: 50px;
+}
+#gameTable{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -215px;
+  margin-top: -200px;
+}

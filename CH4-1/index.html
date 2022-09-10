@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SearchToEscape</title>
+    <link href="detective.css" rel="stylesheet" type="text/css" />
+  </head>
+
+<body>
+  <div id="wrap">
+        <div id="header">Chapter 4</div>
+        <div id="middle">
+
+            <div id="section">
+              <div id = "crime_scene">
+                <button id = 'toir' type="button" >
+                  사건경위
+                </button>
+              </div>
+
+              <div id = "incident_report">
+                <div class = 'title'> 사건 경위서 <br></div>
+                <div id = "common">
+                  <div class = 'subtitle'> <br> <공통사항> <br> </div>
+                  <div class = 'content'>
+                  피해자: 1104호 거주자 정형진 <br>
+                  - 사건이 일어난 동은 4, 5, 6라인으로 층마다 3개의 가구가 있음.<br>
+                  - 9층 1명, 11층 2명, 12 2명의 용의자에 대한 진술을 얻음.<br>
+                  - 각 진술 중 하나는 거짓, 하나는 참임이 밝혀짐.<br>
+                  </div>
+                </div>
+                <div id = "testimony_box">
+                  <div class = 'subtitle'> <br> <용의자 진술> <br> </div>
+                  <div id = "ta" class = "testimony">
+                    <img class = "icon" src="images/ta.png"  width = "50px" height = "50px"> </img>
+                    <div class = 'content'>
+                    안유진(20세/아이돌 연습생)<br>
+                    나는 혼자 다른 층에 살고, 김선생은 피해자 바로 옆집에 살아.
+                    </div>
+                  </div>
+                  <div id = "tb" class = "testimony">
+                    <img class = "icon" src="images/tb.png"  width = "50px" height = "50px"> </img>
+                    <div class = 'content'>
+                    김선생(35세/수학 선생님)<br>
+                    나는 안유진이랑 같은 층에 살고, 백화백과 고민영은 같은 층에 살아.
+                    </div>
+                  </div>
+                  <div id = "tc" class = "testimony">
+                    <img class = "icon" src="images/tc.png"  width = "50px" height = "50px"> </img>
+                    <div class = 'content'>
+                    백화백(26세/화가)<br>
+                    김선생과 나코더는 피해자와 같은 층에 살고, 나는 안유진과 호수 뒷자리가 같아.
+                    </div>
+                  </div>
+                  <div id = "td" class = "testimony">
+                    <img class = "icon" src="images/td.png"  width = "50px" height = "50px"> </img>
+                    <div class = 'content'>
+                    고민영(28세/곰인형 제작가)<br>
+                    나는 피해자와 같은 층에 살고, 나는 안유진과 호수 뒷자리가 같아.
+                    </div>
+                  </div>
+                  <div id = "te" class = "testimony">
+                    <img class = "icon" src="images/te.png"  width = "50px" height = "50px"> </img>
+                    <div class = 'content'>
+                    나코더(23세/천재 해커)<br>
+                    나는 안유진과 같은 층이고, 김선생과 백화백은 호수의 숫자의 합(1104호 -> 1+1+0+4 = 6)이 같아.
+                    </div>
+                  </div>
+                </div>
+                <button id = 'tocs' type="button">사건 현장</button>
+                <div id = 'attempt'>
+                  범인: <input id="house" type="text" value="호수" />호
+                  <input id="name" type="text" value="이름" />
+                  <button id = 'toans' type="button"> 추리하기 </button>
+                </div>
+              </div>
+
+              <div id = 'transition'>
+                <button id = 'trButton'type="button" onclick="location.href='https://cksdml1014.github.io/web1/%EB%B0%A9%ED%83%88%EC%B6%9C/chapter1-2-1.html' ">
+                  다음으로 이동
+                </button>
+              </div>
+
+          </div>
+
+        </div>
+        <div id="footer">Produced by 김기범, 박하늘, 송찬의, 정우석</div>
+      </div>
+
+      <script src = "detective.js"></script>
+</body>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SearchToEscape</title>
+    <link href="cloth.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header> Chapter 3 </header>
+    <div id="main">
+      <div class="top"> 플래시 게임 </div>
+
+      <div class="nav">
+        <div class="search">
+          <input id="SearchWindow" type="text" placeholder="검색" autocomplete="off" onKeypress="javascript:if(event.keyCode==13) {search_onclick_submit()}"/>
+          <div class="RecordWindow">
+            <div class="record" id = 'record1'>비즈네르 암호</div>
+            <div class="record" id = 'record2'>피아노 코드</div>
+            <div class="record" id = 'record3'>아스키 코드</div>
+          </div>
+        </div>
+        <div class="games">
+          <div class="this game">위장</div>
+          <div class="game">잠행</div>
+          <div class="game">도주</div>
+          <div class="game">탈출</div>
+        </div>
+      </div>
+      <div id="GameWindow">
+
+        <input type="button" id="start" onclick='init()'/ value="위장을 시작합니다.">
+
+        <div id = 'clothContainer'>
+          <div class= 'container' id = 'chkTcontainer'>
+            <input type="radio" name = 'T' id="chkT1">
+            <input type="radio" name = 'T' id="chkT2">
+            <input type="radio" name = 'T' id="chkT3">
+            <input type="radio" name = 'T' id="chkT4">
+            <input type="radio" name = 'T' id="chkT5">
+            <input type="radio" name = 'T' id="chkT6">
+          </div>
+          <div class= 'container' id = 'Tcontainer'>
+            <img src= 'clothes/T1.png' width = 15%>
+            <img src= 'clothes/T2.png' width = 15%>
+            <img src= 'clothes/T3.png' width = 15%>
+            <img src= 'clothes/T4.png' width = 15%>
+            <img src= 'clothes/T5.png' width = 15%>
+            <img src= 'clothes/T6.png' width = 15%>
+          </div>
+          <br>
+          <div class= 'container' id = 'chkPcontainer'>
+            <input type="radio" name = 'P' id="chkP1">
+            <input type="radio" name = 'P' id="chkP2">
+            <input type="radio" name = 'P' id="chkP3">
+            <input type="radio" name = 'P' id="chkP4">
+            <input type="radio" name = 'P' id="chkP5">
+            <input type="radio" name = 'P' id="chkP6">
+          </div>
+          <div class= 'container' id = 'Pcontainer'>
+            <img src= 'clothes/P1.png' width = 15%>
+            <img src= 'clothes/P2.png' width = 15%>
+            <img src= 'clothes/P3.png' width = 15%>
+            <img src= 'clothes/P4.png' width = 15%>
+            <img src= 'clothes/P5.png' width = 15%>
+            <img src= 'clothes/P6.png' width = 15%>
+          </div>
+          <div class= 'container' id = 'Scontainer'>
+
+          </div>
+        </div>
+        <input type="button" id="eval" onclick='init()'/ value="제출">
+        <div id = 'scoreboard'>
+          SCORE : 00000000
+        </div>
+
+      </div>
+    </div>
+    <footer> Produced by  김기범, 박하늘, 송찬의, 정우석</footer>
+
+    <script src = "cloth.js"></script>
+  </body>
+</html>

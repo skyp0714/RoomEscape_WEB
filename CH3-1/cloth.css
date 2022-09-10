@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {margin:0; padding:0; box-sizing: border-box;}
+@font-face {
+  font-family: 'digital';
+  src: url('font/digital.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  -ms-user-select: none;
+  -moz-user-select:
+  -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select:none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+header{
+  color: red;
+  font-size: 30px;
+  line-height: 128px;
+  font-weight: bold;
+}
+
+footer{
+  line-height: 128px;
+  float: left;
+  color: white;
+  font-size: 15px;
+}
+
+div#main{
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 64px rgb(32,32,32);
+  width: 1024px; height: 750px;
+}
+
+
+
+div.top {
+  width: 100%; height : 30px;
+  font-size: 20px; font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+}
+
+div.nav{
+  position: relative;
+  background-color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; height: 65px;
+}
+
+div.search {
+  background-color: white;
+  width: 100%; height: 10px;
+  float: right;
+}
+
+#SearchWindow{
+  position: absolute;
+  width: 200px; height: 28px;
+  border: 2px solid black;
+  border-radius: 2px;
+  right: 5px; top: -20px;
+}
+
+div.RecordWindow{
+  background-color: white;
+  position: absolute;
+  width: 200px; height: auto;
+  border: 1px solid gray;
+  right: 5px; top: 10px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+div.record{
+  width: 100%;
+  margin: 3px;
+}
+
+div.games {
+  display: flex;
+  align-items: center;
+}
+
+div.game {
+  width: 224px; height: 30px;
+  background-color: #ddd;
+  text-align: center;
+  border-right: 2px solid #777;
+}
+div.game:last-child{
+  border: none;
+}
+
+div.this {
+  background-color: white;
+}
+
+#start{
+  color: rgba(10,7,67,1.00);
+  padding: 10px 10px 10px 10px;
+  font-family: '궁서';
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: rgb(246, 184, 30);
+  border: 2px solid rgba(239,0,0,1.00);
+}
+
+div#GameWindow{
+  background-color: rgb(9,17,26);
+  width: 100%; height: 635px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#eval{
+    display: none;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+}
+
+#scoreboard{
+  display: none;
+  font-family: 'digital';
+  font-size: 35px;
+  color: white;
+  line-height: 100px;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+}
+
+#clothContainer{
+  margin-left: 65px;
+  display: none;
+  flex-direction: column;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+input[type='radio']{
+  width: 30px;
+  height: 20px;
+  margin-left: 47.2px;
+  margin-right: 47.2px;
+}
+
+input [type = 'radio']: checked{
+
+}
